@@ -1,15 +1,14 @@
-function Hello() {
-  
+import React from "react";
 
-    return (
-      <>
-        <div>
-          <h1>Hello</h1>
-          
-        </div>
-        
-      </>
-    )
-  }
-  
-  export default Hello
+function Home() {
+  return (
+    <div className="container-fluid">
+      <div className="row">
+        <h1 className="text-center">Home</h1>
+      </div>
+      
+    </div>
+  );
+}
+
+export default Home;
