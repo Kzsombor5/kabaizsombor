@@ -1,14 +1,21 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./Home"
+import Regiok from "./Regiok"
+
 function App() {
   
 
-  return (
-    <>
+  return (    
       <div>
-        <h1>React alkalmazás</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/regiok" element={<Regiok />} />
+        </Routes>
+      </BrowserRouter>
         
       </div>
-      
-    </>
+          
   )
 }
 
