@@ -31,7 +31,7 @@ app.get("/hettorpe", (req, res) => { //hettorpe api útvonal Lekérdezi a szobá
 });
 
 app.get("/kihasznaltsag", (req, res) => { //kihasznaltsag api útvonal Lekérdezi minden szoba foglaltságát (vendég neve + vendégéjszakák száma)
-  const sql = "SELECT szobak.sznev, foglalasok.vendeg, DATEDIFF(foglalasok.tav, foglalasok.erk) AS vendegejszakak FROM szobak INNER JOIN foglalasok ON szobak.szazon = foglalasok.fsorsz ORDER BY szobak.sznev";
+  const sql = "SELECT szobak.sznev, foglalasok.vendeg, DATEDIFF(foglalasok.tav, foglalasok.erk) AS vendegejszakak FROM szobak INNER JOIN foglalasok ON szobak.szazon = foglalasok.fsorsz ORDER BY szobak.sznev"; // DATEDIFF függvényt ai-val néztem
   db.query(sql, (err, result) => {
       if (err) return res.json(err);
       return res.json(result);
